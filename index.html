@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progetto: Memory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Animal Memory</h1>
+    <secton class="timer">
+        <p>
+            <span class="timer__minuti">00</span>
+            <span class="timer__secondi">00</span>
+        </p>
+    </secton>
+    <section class="board">
+        <div class="carta" data-forma="gatto">
+            <img src="image/halloween-6701942.svg" alt="Gatto" class="fronte">
+            <img src="image/triangles-1430105.svg" alt="Carta Memory" class="retro">
+        </div>
+
+        <div class="carta" data-forma="gatto">
+            <img src="image/halloween-6701942.svg" alt="Gatto" class="fronte">
+            <img src="image/triangles-1430105.svg" alt="Carta Memory" class="retro">
+        </div>
+
+        <div class="carta" data-forma="cane">
+            <img src="image/dog-7072906 [Convertito].svg" alt="Cane" class="fronte">
+            <img src="image/triangles-1430105.svg" alt="Carta Memory" class="retro">
+        </div>
+
+        <div class="carta" data-forma="cane">
+            <img src="image/dog-7072906 [Convertito].svg" alt="Cane" class="fronte">
+            <img src="image/triangles-1430105.svg" alt="Carta Memory" class="retro">
+        </div>
+
+        <div class="carta" data-forma="topo">
+            <img src="image/ai-generated-8675105.svg" alt="Topo" class="fronte">
+            <img src="image/triangles-1430105.svg" alt="Carta Memory" class="retro">
+        </div>
+
+        <div class="carta" data-forma="topo">
+            <img src="image/ai-generated-8675105.svg" alt="Topo" class="fronte">
+            <img src="image/triangles-1430105.svg" alt="Carta Memory" class="retro">
+        </div>
+
+        <div class="carta" data-forma="uccellino">
+            <img src="image/bird-8742041.svg" alt="Uccellino" class="fronte" style="width:100%; padding-right: 30px;">
+            <img src="image/triangles-1430105.svg" alt="Carta Memory" class="retro">
+        </div>
+
+        <div class="carta" data-forma="uccellino">
+            <img src="image/bird-8742041.svg" alt="Uccellino" class="fronte" style="width:100%; padding-right: 30px;">
+            <img src="image/triangles-1430105.svg" alt="Carta Memory" class="retro">
+        </div>
+
+        <div class="carta" data-forma="coniglio">
+            <img src="image/graphic-4064917.svg" alt="Coniglio" class="fronte"
+                style="width: 100%; padding-right: 10px;">
+            <img src="image/triangles-1430105.svg" alt="Carta Memory" class="retro">
+        </div>
+
+        <div class="carta" data-forma="coniglio">
+            <img src="image/graphic-4064917.svg" alt="Coniglio" class="fronte"
+                style="width: 100%; padding-right: 10px;">
+            <img src="image/triangles-1430105.svg" alt="Carta Memory" class="retro">
+        </div>
+
+        <div class="carta" data-forma="serpente">
+            <img src="image/snake-312561.svg" alt="serpente" class="fronte"
+                style="object-fit: cover; object-position: 80%;">
+            <img src="image/triangles-1430105.svg" alt="Carta Memory" class="retro">
+        </div>
+
+        <div class="carta" data-forma="serpente">
+            <img src="image/snake-312561.svg" alt="Serpente" class="fronte"
+                style="object-fit: cover; object-position: 80%;">
+            <img src="image/triangles-1430105.svg" alt="Carta Memory" class="retro">
+        </div>
+    </section>
+
+    <section class="classifica">
+        <button>Mostra classifica</button>
+        <div class="classifica__container"></div>
+    </section>
+
+    <modal hidden>
+
+        <p>
+            Congratulazioni!🥳 Hai vinto
+        </p>
+
+        <button class="giocaDiNuovo"> Gioca di Nuovo</button>
+
+    </modal>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

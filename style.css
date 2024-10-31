@@ -1,0 +1,199 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    height: 60px;
+    font-size: 3rem;
+    line-height: 60px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    background-color: #333333;
+    flex-direction: column;
+}
+
+.board {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    /* Aggiungo effetto 3d, piu è basso e maggiore è l'effetto */
+    perspective: 1000px;
+}
+
+.carta {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 5px #1c1c1c;
+    transform: scale(1);
+    border-radius: 10px;
+
+    /*Crea effetto di transizione preservando il 3d*/
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.carta:active {
+    transform: scale(0.97);
+    transition: trasform 0.2s;
+
+}
+
+/* senza spazio significa classe carta e classe flip */
+/* classe flip è quella che abbiamo aggiunto in JS con classList */
+.carta.flip {
+    /* Ruoto di 180 gradi sull'asse delle y */
+    transform: rotateY(180deg);
+}
+
+.fronte,
+.retro {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    border-radius: 10px;
+    border: 5px solid rgb(0, 0, 0);
+
+    /* Nascondo la faccia dietro */
+    backface-visibility: hidden;
+}
+
+.retro {
+    object-fit: cover;
+}
+
+
+.fronte {
+    /* Mostro il fronte quando il retro viene girato: ricompenso la rotazione */
+    transform: rotateY(180deg);
+    background-color: rgb(209, 208, 208);
+    border: none;
+    object-fit: fill;
+    padding-left: 20px;
+}
+
+modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 350px;
+    font-size: 2.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 24px 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+modal p {
+    margin-bottom: 24px;
+}
+
+modal button {
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 600;
+    color: #fff;
+    background-color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+modal button:hover {
+    background-color: #535353;
+}
+
+body.vittoria::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+}
+
+.timer {
+    font-size: 3.5rem;
+    color: white;
+    margin-top: 50px;
+    font-family: sans-serif;
+}
+
+.timer p {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.timer span:not(:last-child)::after {
+    content: ":";
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.classifica {
+    width: 360px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -360px;
+    background-color: #1c1c1c;
+    box-shadow: 0px 0px 10px rgba(0, 0., 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.classifica button {
+    height: 36px;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 75px;
+    left: -85px;
+    padding: 0 16px;
+    background-color: #1c1c1c;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+}
+
+.classifica button:hover {
+    background-color: #333;
+}
+
+.classifica__container ul {
+    list-style: none;
+    font-family: sans-serif;
+}
+
+.classifica__container ul li {
+    padding: 20px 30px;
+    border-bottom: 1px solid white;
+    transition: all .2 ease;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.classifica__container ul li:hover {
+    background-color: #333;
+}
